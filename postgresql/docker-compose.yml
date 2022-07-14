@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  postgresdb:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - postgresqldb:/var/lib/postgresql/data
+
+volumes:
+  postgresqldb:
